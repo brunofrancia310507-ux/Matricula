@@ -45,3 +45,26 @@ def registrar_solicitud():
     lista_tipos.append(tipo)
     lista_prioridades.append(prioridad)
     mostrar_resumen_solicitud(codigo, nombre, tipo, prioridad)
+# funcion CON retorno, recibe parametros y no usa variables globales
+def validar_texto_obligatorio(texto, longitud_minima):
+    texto_limpio = texto.strip()
+    if texto_limpio == "":
+        return False
+    if len(texto_limpio) < longitud_minima:
+        return False
+    return True
+# funcion con retorno
+def validar_tipo_consulta(tipo):
+    tipo_limpio = tipo.strip().lower()
+    if tipo_limpio == "matricula":
+        return True
+    elif tipo_limpio == "pagos":
+        return True
+    elif tipo_limpio == "constancia":
+        return True
+    elif tipo_limpio == "plataforma":
+        return True
+    elif tipo_limpio == "otro":
+        return True
+    else:
+        return False
