@@ -68,3 +68,31 @@ def validar_tipo_consulta(tipo):
         return True
     else:
         return False
+# funcion con retorno
+def asignar_prioridad(tipo):
+    tipo_limpio = tipo.strip().lower()
+    if tipo_limpio == "pagos":
+        return "Alta"
+    elif tipo_limpio == "plataforma":
+        return "Alta"
+    elif tipo_limpio == "matricula":
+        return "Media"
+    else:
+        return "Baja"
+# funcion sin retorno, muestra los datos de una solicitud
+def mostrar_resumen_solicitud(codigo, nombre, tipo, prioridad):
+    print("")
+    print("--- Solicitud registrada ---")
+    print("Codigo:", codigo)
+    print("Nombre:", nombre)
+    print("Tipo:", tipo)
+    print("Prioridad:", prioridad)
+# muestra todas las solicitudes guardadas hasta el momento
+def mostrar_resumen_general():
+    print("")
+    print("Total de solicitudes registradas:", len(lista_codigos))
+    i = 0
+    while i < len(lista_codigos):
+        mostrar_resumen_solicitud(lista_codigos[i], lista_nombres[i], lista_tipos[i], lista_prioridades[i])
+        i = i + 1
+main()
